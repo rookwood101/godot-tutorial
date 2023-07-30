@@ -3,6 +3,8 @@ extends CharacterBody3D
 @export var min_speed = 10
 @export var max_speed = 18
 
+signal squashed
+
 # This function will be called from the Main scene
 func initialize(start_position, player_position):
 	look_at_from_position(start_position, player_position, Vector3.UP)
@@ -17,4 +19,8 @@ func _physics_process(delta):
 
 
 func _on_screen_exited():
+	queue_free()
+
+func squash():
+	squashed.emit()
 	queue_free()
