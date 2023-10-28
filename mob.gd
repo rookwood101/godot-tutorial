@@ -14,7 +14,7 @@ func initialize(start_position, player_position):
 	velocity = Vector3.FORWARD * random_speed
 	velocity.rotated(Vector3.UP, rotation.y)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 
 
